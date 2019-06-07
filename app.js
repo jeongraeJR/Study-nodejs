@@ -17,4 +17,10 @@ app.get('/',(req,res)=>{
 
 app.listen(3000,()=>{
     console.log('Listening port 3000!');
-})
+
+    //force :true 무조건 테이블을 새로 만듦 false:있을경우 생성하지 않음.
+    require('./api/users/models').sequelize.sync({force:true})
+    .then(()=>{
+        console.log('Databases sync');
+    });
+});
