@@ -24,3 +24,5 @@ app.listen(3000,()=>{
         console.log('Databases sync');
     });
 });
+
+module.exports = app;
